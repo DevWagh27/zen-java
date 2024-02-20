@@ -1,0 +1,20 @@
+variables:
+  - name: image
+    value: zenpaydevngimages.azurecr.io/integrations/zenz-account-info:$(Build.BuildId)
+resources:
+  repositories:
+    - repository: zenz-azure-build-pipeline-master
+      type: git
+      name: zenz-azure-build-pipeline-master
+trigger: none
+pool:
+  vmImage: ubuntu-latest
+steps:
+  - template: master-pipeline-updated2.yaml@zenz-azure-build-pipeline-master
+    parameters:
+      aksservicename: "zenbyzenith-devkubeng-intg-svcconn"
+      aksnamespace: "zenpay-dev-ng-intg-ns"
+      projectname: "zenz-account-info"
+      repository: "integrations/zenz-account-info"
+      sonarprojectkey: "zenbyzenith-prj_zenz-account-info_AYmH0iX6TNEb_GDHexBB"
+      

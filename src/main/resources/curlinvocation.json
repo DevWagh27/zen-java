@@ -1,0 +1,114 @@
+curl --location 'http://localhost:8080/account-info/api/v1/cbs/accountInfo' \
+--header 'messageID: AI1684560654' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--data '{
+  "header": {
+    "messageID": "AI1684560654",
+    "serviceCode": "1001",
+    "serviceName": "AccountInfo",
+    "channelCode": "101",
+    "channelName": "EzzyBizz",
+    "channelIdentifier": "POL",
+    "routeCode": "001",
+    "routeName": "Finacle",
+    "timeStamp": "2022-07-12T13:07:09.676",
+    "serviceMode": "sync",
+    "subscribeEvents": "1",
+    "callBackURL": ""
+  },
+  "requestPayload": {
+    "primaryData": {
+      "businessKey": "0540279760704",
+      "businessKeyType": "AccountNumber"
+    },
+    "additionalData": {
+      "bankId": "54"
+    }
+  }
+}'
+
+Response:
+{
+    "header": {
+        "messageID": "AI1684560646",
+        "conversationID": "dc3e30b2-1fd8-472b-a312-d80ed00b62de",
+        "targetSystemID": "NotAvailable",
+        "channelCode": "101",
+        "channelName": "EzzyBizz",
+        "channelIdentifier": "POL",
+        "routeCode": "001",
+        "routeName": "Finacle",
+        "serviceCode": "1001",
+        "ehfInfo": {
+            "item": [
+                {
+                    "ehfRef": "OSP-1000",
+                    "ehfDesc": "Processed Successfully"
+                }
+            ]
+        }
+    },
+    "responsePayload": {
+        "primaryData": {
+            "businessKey": "0540279760704",
+            "businessKeyType": "AccountNumber"
+        },
+        "accountInfo": {
+            "customerDetails": {
+                "identifier": "54314582110",
+                "fullName": "SEERBIT LIMITED",
+                "firstName": "",
+                "lastName": "SEERBIT LIMITED",
+                "shortName": "SEERBIT",
+                "titleCode": "M/S",
+                "nationalID": "",
+                "emailID": "testdb@testdb.com",
+                "phoneNumber": "000000",
+                "dateOfBirth": "2020-02-25T12:00:00.000",
+                "maritalStatus": "",
+                "gender": "",
+                "minorFlag": "",
+                "nreFlag": "C",
+                "community": "",
+                "userSubClassification": "",
+                "passportNo": ""
+            },
+            "address": {
+                "addressLine1": "1",
+                "addressLine2": "1,NAIROBI",
+                "cityCode": "247",
+                "stateCode": "CEN",
+                "countryCode": "KE",
+                "cityCodeDesc": "OTHERS NOT DEFINED",
+                "pinCode": "00800",
+                "addressID": "81584351"
+            },
+            "accountID": "0540279760704",
+            "cbsAccountRef": "DV35367769",
+            "openDate": "2020-04-01T12:00:00.000",
+            "branchCode": "054",
+            "schemeCode": "CA210",
+            "schemeType": "CAA",
+            "accountName": "SEERBIT LIMITED",
+            "currency": "KES",
+            "statusCode": "A",
+            "ownershipCode": "C",
+            "closureFlag": "N",
+            "creationFlag": "Y",
+            "freezeCode": "",
+            "clearBalance": "2697584.46",
+            "unclearBalance": "-1630.20",
+            "effectiveBalance": "1693834.26",
+            "sanctionLimit": "0.00",
+            "lienAmount": "1000000.00",
+            "drawingPower": "0.00",
+            "modeOfOperation": "ETS",
+            "corpRetFlag": "C",
+            "incoprationDate": "2020-02-25T12:00:00.000",
+            "constCode": "",
+            "secRegNo": "CONS",
+            "compRegNo": "PVT-6LUXY7D"
+        }
+    }
+}

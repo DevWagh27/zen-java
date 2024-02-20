@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<settings>
+
+	<profiles>
+		<profile>
+			<id>extra-repos</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<repositories>
+				<repository>
+					<id>maven.central</id>
+					<name>Maven Central</name>
+					<url>https://repo1.maven.org/maven2</url>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</releases>
+				</repository>
+
+
+				<repository>
+					<id>redhat.ga</id>
+					<name>Red Hat General Availability Repository</name>
+					<url>https://maven.repository.redhat.com/ga</url>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</releases>
+				</repository>
+
+
+				<repository>
+					<id>redhat.ea</id>
+					<name>Red Hat Early Access Repository</name>
+					<url>https://maven.repository.redhat.com/earlyaccess/all</url>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</releases>
+				</repository>
+			</repositories>
+			<pluginRepositories>
+
+				<pluginRepository>
+					<id>maven.central</id>
+					<name>Maven Central</name>
+					<url>https://repo1.maven.org/maven2</url>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</releases>
+				</pluginRepository>
+
+
+				<pluginRepository>
+					<id>redhat.ga</id>
+					<name>Red Hat General Availability Repository</name>
+					<url>https://maven.repository.redhat.com/ga</url>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</releases>
+				</pluginRepository>
+
+
+				<pluginRepository>
+					<id>redhat.ea</id>
+					<name>Red Hat Early Access Repository</name>
+					<url>https://maven.repository.redhat.com/earlyaccess/all</url>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</releases>
+				</pluginRepository>
+
+			</pluginRepositories>
+		</profile>
+	</profiles>
+
+	<activeProfiles>
+		<activeProfile>extra-repos</activeProfile>
+	</activeProfiles>
+
+	<pluginGroups>
+		<pluginGroup>org.eclipse.jkube</pluginGroup>
+	</pluginGroups>
+
+</settings>

@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zenz-account-info 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zenz-account-info 
+  template:
+    metadata:
+      labels:
+        app: zenz-account-info
+    spec:
+      containers:
+      - name: zenz-account-info
+        image: zenpaydevngimages.azurecr.io/integrations/zenz-account-info:#{Build.BuildId}#
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+
+---
+kind: Service 
+apiVersion: v1 
+metadata:
+  name: zenz-account-info-svc
+spec:
+  type: LoadBalancer
+  selector:
+    app: zenz-account-info 
+  ports:
+    - protocol: TCP
+      port: 8080 
+      targetPort: 8080
